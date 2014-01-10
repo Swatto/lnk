@@ -10,6 +10,13 @@ Built and tested on OS X
 curl https://raw.github.com/swatto/lnk/master/install.sh | sh
 ```
 
+You must load the lnk script to your environnement and the bin folder too. Please add those sentence in your .bashrc or .zshrc
+
+```
+[ -s $HOME/.lnk/lnk.sh ] && . $HOME/.lnk/lnk.sh
+export PATH="$HOME/.lnk/bin"
+```
+
 ## Use
 
 ```
