@@ -1,6 +1,6 @@
 # Linker
 
-Simple shell script to manage bin to your system.
+Simple shell script to manage bin to your system. [Video](http://www.youtube.com/watch?v=lOPM136U2Q4)
 
 ## Installation
 
