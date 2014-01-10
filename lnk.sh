@@ -27,7 +27,7 @@ lnk(){
     ;;
     "add" )
       if [ "$2" ]; then
-        if [ ! -f "filename" ]; then
+        if [ ! -f "$2" ]; then
           echo "Error: provide a file"
           exit 1
         fi
