@@ -18,7 +18,7 @@ lnk(){
       echo "  lnk help              Show this help"
       echo "  lnk add <file>        Link the bin file"
       echo "  lnk rm <file>         Link the bin file"
-      echo "  lnk ls                List bin file in /usr/bin"
+      echo "  lnk ls                List bin file in $LNK_DIR"
       echo
       echo "Example:"
       echo "  lnk add myProgramm    Link the myProgramm in the current folder"
