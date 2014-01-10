@@ -1,8 +1,10 @@
 # Linker
 
-Simple shell script to manage bin to your system. [Video](http://www.youtube.com/watch?v=lOPM136U2Q4)
+A simple shell script to manage bin in your system. [Video](http://www.youtube.com/watch?v=lOPM136U2Q4)
 
 ## Installation
+
+Built and tested on OS X
 
 ```shell
 curl https://raw.github.com/swatto/lnk/master/install.sh | sh
