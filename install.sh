@@ -16,9 +16,12 @@ else
   echo "Lnk: install..."
   git clone https://github.com/Swatto/lnk.git $LNK_DIR
   echo
+  echo "LNK installed !"
+  echo
   echo "Please add those sentence in your .bashrc or .zshrc to use LNK"
   echo "-------------------------------------------------"
   echo "[ -s \$HOME/.lnk/lnk.sh ] && . \$HOME/.lnk/lnk.sh"
   echo "export PATH=\"$HOME/.lnk/bin\""
   echo "-------------------------------------------------"
+  echo
 fi
