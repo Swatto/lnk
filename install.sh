@@ -14,7 +14,7 @@ if [ -d "$LNK_DIR" ]; then
   cd $LNK_DIR && git pull
 else
   echo "Lnk: install..."
-  git clone https://github.com/swatto/lnk.git $LNK_DIR
+  git clone https://github.com/Swatto/lnk.git $LNK_DIR
   echo
   echo "Please add those sentence in your .bashrc or .zshrc to use LNK"
   echo "-------------------------------------------------"
