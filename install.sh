@@ -10,10 +10,12 @@ fi
 if [ -d "$LNK_DIR" ]; then
   echo "=> LNK is already installed in $LNK_DIR, trying to update"
   echo -ne "\r=> "
-  cd $LNK_DIR && git pull
+  cd $LNK_DIR && git pull >/dev/null
+  echo "Succes: LNK is up to date"
+  exit 1
 else
   echo "Lnk: install..."
-  git clone https://github.com/Swatto/lnk.git $LNK_DIR
+  git clone https://github.com/Swatto/lnk.git $LNK_DIR>/dev/null
   echo
   echo "LNK installed !"
   echo

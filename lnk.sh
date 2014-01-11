@@ -33,9 +33,9 @@ lnk(){
         fi
         if [[ ! -x "$2" ]]; then
           echo "The file is not executable. We're gonna change it for you."
-          sudo chmod +x $2
+          sudo chmod +x $2 >/dev/null
         fi
-        sudo ln $2 $HOME/.lnk/bin/$2
+        sudo ln $2 $HOME/.lnk/bin/$2 >/dev/null
         echo "Succes: $2 is now added as a global executable file"
       else
       fi
