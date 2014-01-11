@@ -26,7 +26,7 @@ export PATH="/Users/me/dev/project2/api/v2/build"
 # named 'clientAPI'
 lnk add clientAPI
 
-The file is not executable. We're gonna change it for you.
+The file is not executable. We are gonna change it for you.
 password:
 Succes: clientAPI is now added as a global executable file
 ```
@@ -57,7 +57,7 @@ lnk rm file    # Unlink the bin file
 lnk ls         # List bin file
 ```
 
-## Remove
+## Remove linker from the system
 
 To clean your system of Linker :
 
