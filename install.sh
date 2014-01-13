@@ -7,22 +7,25 @@ if ! hash git 2>/dev/null; then
   exit 1
 fi
 
+echo
+echo "---------------------------------"
+echo "Linker - the bin exposer for OS X"
+echo "---------------------------------"
+echo
+
 if [ -d "$LNK_DIR" ]; then
-  echo "=> LNK is already installed in $LNK_DIR, trying to update"
-  echo -ne "\r=> "
+  echo "Linker is already installed in $LNK_DIR, trying to update it"
   cd $LNK_DIR && git pull >/dev/null
-  echo "Succes: LNK is up to date"
-  exit 1
+  echo "Succes: Linker is up to date"
 else
-  echo "Lnk: install..."
-  git clone https://github.com/Swatto/lnk.git $LNK_DIR>/dev/null
+  echo "Installation in progress"
+  echo "..."
+  git clone https://github.com/Swatto/lnk.git $LNK_DIR >/dev/null
+  echo "Success: Linker is installed!"
   echo
-  echo "LNK installed !"
-  echo
-  echo "Please add those sentence in your .bashrc or .zshrc to use LNK"
+  echo "Please add those sentence in your .bashrc or .zshrc to use it."
   echo "-------------------------------------------------"
   echo "[ -s \$HOME/.lnk/lnk.sh ] && . \$HOME/.lnk/lnk.sh"
   echo "export PATH=\"$HOME/.lnk/bin\""
   echo "-------------------------------------------------"
-  echo
 fi
