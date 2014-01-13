@@ -16,7 +16,7 @@ echo
 if [ -d "$LNK_DIR" ]; then
   echo "Linker is already installed in $LNK_DIR, trying to update it"
   cd $LNK_DIR && git pull >/dev/null
-  echo "Succes: Linker is up to date"
+  echo "Success: Linker is up to date"
 else
   echo "Installation in progress"
   echo "..."
