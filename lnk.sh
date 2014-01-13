@@ -12,7 +12,7 @@ lnk(){
   case $1 in
     "help" )
       echo
-      echo "Lnk - the bin linker for OS X"
+      echo -e "\e[33mLinker\e[0m - the bin exposer for OS X"
       echo
       echo "Usage:"
       echo "  lnk help              Show this help"
@@ -27,29 +27,44 @@ lnk(){
     ;;
     "add" )
       if [ "$2" ]; then
-        if [ ! -f "$2" ]; then
-          echo "Error: provide a file"
-          exit 1
+        if [[ ! -f "$2" ]]; then
+          echo -e "\e[31mLinker error\e[0m: provide an existing file"
+          return 1
+        else
+          if [[ -f "$LNK_DIR/bin/$2" ]]; then
+            echo "A file named $2 is already present. Do you want to replace it? (y/n)"
+            read yn
+            case $yn in
+                [Yy] ) rm $HOME/.lnk/bin/$2 >/dev/null;;
+                [Nn] ) echo;echo "\e[31mLinker error\e[0m: a file named $2 is already present."; return 1;;
+            esac
+          fi
+          if [[ ! -x "$2" ]]; then
+            echo "Information: the file is not executable. We\'re gonna change it for you."
+            sudo chmod +x $2 >/dev/null
+          fi
+          sudo ln $2 $LNK_DIR/bin/$2 >/dev/null
+          echo
+          echo -e "\e[32mLinker succes\e[0m: $2 is now added as a global executable file"
         fi
-        if [[ ! -x "$2" ]]; then
-          echo "The file is not executable. We're gonna change it for you."
-          sudo chmod +x $2 >/dev/null
-        fi
-        sudo ln $2 $HOME/.lnk/bin/$2 >/dev/null
-        echo "Succes: $2 is now added as a global executable file"
-      else
       fi
     ;;
     "rm" )
       if [ "$2" ]; then
-        sudo rm $HOME/.lnk/bin/$2
-        echo "Succes: $2 is now remove as a global executable file"
+        if [[ -f "$LNK_DIR/bin/$2" ]]; then
+          sudo rm $LNK_DIR/bin/$2
+          echo
+          echo -e "\e[32mLinker succes\e[0m: $2 is now remove as a global executable file"
+        else
+          echo
+          echo -e "\e[31mLinker error\e[0m: provide a file"
+        fi
       else
-        echo "Error: provide a file"
+        echo -e "\e[31mLinker error\e[0m: provide a file"
       fi
     ;;
     "ls" )
-      ls $HOME/.lnk/bin
+      ls $LNK_DIR/bin
     ;;
     * )
       lnk help
